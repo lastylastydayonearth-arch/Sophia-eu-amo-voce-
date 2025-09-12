@@ -132,6 +132,7 @@ body {
       0%, 100% { opacity: 0.2; transform: scale(0.8); }
       50% { opacity: 1; transform: scale(1.4); }
     }
+
 .love-footer {
   background-color: #1b0a1f;
   color: white;
@@ -147,10 +148,11 @@ body {
 .love-footer p {
   max-width: 800px;
   margin: 0 auto;
-  white-space: pre-line; /* mantém as quebras de linha */
+  white-space: pre-line;
+  color: white;
 }
 
 .love-footer strong {
-  color: #d1004c;
+  color: white;
   font-size: 18px;
 }
