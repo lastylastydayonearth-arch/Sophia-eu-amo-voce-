@@ -135,7 +135,7 @@ body {
 
 .love-footer {
   background-color: #1b0a1f;
-  color: white;
+  color: white; !important;
   text-align: center;
   padding: 20px;
   font-size: 16px;
