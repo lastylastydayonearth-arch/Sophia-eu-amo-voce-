@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🌹 Amor eterno - Sophia & Eu ❤️</title>
+<link rel="stylesheet" href="sophia.css">
+</head>
+<body>
+  <h1>🌹 Amor Eterno a meu amor, melhor mulher desse mundo minha princesa - Sophia ❤️</h1>
+  <div class="contador" id="contador"></div>
+
+  <div class="love-text">
+    Minha princesa Sophia, minha ptchuquinha, minha futura esposa...  
+    Amo demais compartilhar momentos com você: ver reels juntinhos, comer chocolate Suflair 🍫, sonhar com a nossa casa linda 🏡 e imaginar nossa princesinha pequena.  
+    Cada segundo ao seu lado é o maior presente que já recebi.  
+    Esse site é só uma forma de mostrar o quanto você é especial, linda e o amor da minha vida. ❤️  
+  </div>
+
+  <section>
+    <h2>💌 Mensagens de Amor</h2>
+    <button onclick="mostrarMensagem()">Clique para ver uma mensagem</button>
+    <div class="msg-box" id="mensagem">✨ Clique acima para começar ✨</div>
+  </section>
+
+  <section>
+    <h2>Minha Princesa linda</h2>
+    <div class="gallery">
+      <img src="./Sophia.jpg" alt="Foto 4">
+    </div>
+    <p style="margin-top:10px; color:#ff99aa;">(Troque por nossas fotos mais lindas 🌹)</p>
+  </section>
+  
+  <section>
+    <h2>💖 Clique e espalhe corações</h2>
+    <div class="play-area" id="hearts"></div>
+  </section>
+
+  <section>
+    <h2>🌹 Clique e faça rosas nascerem</h2>
+    <div class="play-area" id="roses"></div>
+  </section>
+
+  <script>
+    function atualizarContador() {
+      const inicio = new Date("2025-04-17T00:00:00");
+      const agora = new Date();
+      let diff = agora - inicio;
+
+      const anos = Math.floor(diff / (1000*60*60*24*365));
+      diff -= anos * (1000*60*60*24*365);
+      const meses = Math.floor(diff / (1000*60*60*24*30));
+      diff -= meses * (1000*60*60*24*30);
+      const dias = Math.floor(diff / (1000*60*60*24));
+      diff -= dias * (1000*60*60*24);
+      const horas = Math.floor(diff / (1000*60*60));
+      diff -= horas * (1000*60*60);
+      const minutos = Math.floor(diff / (1000*60));
+      diff -= minutos * (1000*60);
+      const segundos = Math.floor(diff / 1000);
+
+      document.getElementById("contador").innerHTML = 
+        `Estamos juntos há: <br><b>${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s 💖</b>`;
+    }
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    const heartsArea = document.getElementById("hearts");
+    heartsArea.addEventListener("click", (e) => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = e.offsetX + "px";
+      heart.style.top = e.offsetY + "px";
+      heartsArea.appendChild(heart);
+      setTimeout(()=>heart.remove(), 3000);
+    });
+
+    const rosesArea = document.getElementById("roses");
+    rosesArea.addEventListener("click", (e) => {
+      const rose = document.createElement("div");
+      rose.className = "rose";
+      rose.innerText = "🌹";
+      rose.style.left = e.offsetX + "px";
+      rose.style.top = e.offsetY + "px";
+      rosesArea.appendChild(rose);
+      setTimeout(()=>rose.remove(), 3000);
+    });
+
+    const mensagens = [
+      "Você é a razão do meu sorriso ❤️",
+      "Minha princesa, minha vida 🌹",
+      "Cada segundo com você vale mais que ouro ✨",
+      "Te amo mais do que palavras podem dizer 💕",
+      "Você é meu destino, minha futura esposa 💍",
+      "Amor da minha vida, minha gatinha gostosa 😘",
+      "Amo minha sogrinha linda que me deu você 💖",
+      "Minha princesa Soph, minha ptchuquinha 😍",
+      "Meu neném, meu anjinho, meu tudo 💫",
+      "Minha gostosa, minha paixão infinita 🔥",
+      "Ver reels com você é minha terapia favorita 🎬💕",
+      "Comer chocolate Suflair com você é perfeito 🍫❤️",
+      "Nossa casa linda vai ser cheia de amor 🏡💞",
+      "Nossa princesinha pequena será a coisa mais fofa 👶🌸",
+      "Com você, tudo faz sentido ✨",
+      "Te quero pra sempre comigo 💍💕"
+    ];
+    function mostrarMensagem() {
+      const msg = mensagens[Math.floor(Math.random() * mensagens.length)];
+      document.getElementById("mensagem").innerText = msg;
+    }
+
+    function criarSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = Math.random()*100 + "vw";
+      sparkle.style.top = Math.random()*100 + "vh";
+      sparkle.style.animationDuration = (2+Math.random()*3) + "s";
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 5000);
+    }
+    setInterval(criarSparkle, 600);
+  </script>
+</body>
+</html>
