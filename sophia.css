@@ -1,137 +1,137 @@
 body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #0d0d0d, #1a001a, #330000);
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1a001a, #330000);
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    h1 {
-      margin-top: 20px;
-      font-size: 2.5em;
-      color: #ff4d6d;
-      text-shadow: 0 0 15px #ff99aa;
-    }
+h1 {
+  margin-top: 20px;
+  font-size: 2.5em;
+  color: #ff4d6d;
+  text-shadow: 0 0 15px #ff99aa;
+}
 
-    .contador {
-      margin: 20px auto;
-      padding: 15px;
-      max-width: 600px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      font-size: 1.3em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
+.contador {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 600px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  font-size: 1.3em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
 
-    .love-text {
-      margin: 20px auto;
-      max-width: 800px;
-      padding: 20px;
-      border-radius: 15px;
-      background: rgba(255,0,100,0.15);
-      font-size: 1.2em;
-      line-height: 1.6em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    }
+.love-text {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,0,100,0.15);
+  font-size: 1.2em;
+  line-height: 1.6em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
 
-    section {
-      margin: 40px auto;
-      max-width: 900px;
-    }
+section {
+  margin: 40px auto;
+  max-width: 900px;
+}
 
-    h2 {
-      color: #ff3366;
-      text-shadow: 0 0 8px #ff99aa;
-      margin-bottom: 15px;
-    }
+h2 {
+  color: #ff3366;
+  text-shadow: 0 0 8px #ff99aa;
+  margin-bottom: 15px;
+}
 
-    .play-area {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      background: rgba(255,255,255,0.05);
-      border: 2px dashed rgba(255,100,150,0.6);
-      border-radius: 15px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: inset 0 0 15px rgba(255,0,100,0.4);
-    }
+.play-area {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: rgba(255,255,255,0.05);
+  border: 2px dashed rgba(255,100,150,0.6);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0 0 15px rgba(255,0,100,0.4);
+}
 
-    .heart, .rose {
-      position: absolute;
-      font-size: 2rem;
-      animation: floatUp 3s linear forwards;
-      pointer-events: none;
-    }
+.heart, .rose, .kiss-heart {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 3s linear forwards;
+  pointer-events: none;
+}
 
-    @keyframes floatUp {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-250px) scale(1.5); opacity: 0; }
-    }
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-250px) scale(1.5); opacity: 0; }
+}
 
-    .msg-box {
-      padding: 15px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      margin: 10px auto;
-      max-width: 500px;
-      font-size: 1.2em;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.msg-box {
+  padding: 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  margin: 10px auto;
+  max-width: 500px;
+  font-size: 1.2em;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      background: #ff4d6d;
-      color: white;
-      font-size: 1em;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #ff3366;
-      transform: scale(1.05);
-    }
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #ff3366;
+  transform: scale(1.05);
+}
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
 
-    .gallery img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      transition: 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 18px rgba(255,0,100,0.7);
-    }
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(255,0,100,0.7);
+}
 
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #fff;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: twinkle 3s infinite;
-    }
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.4); }
-    }
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 3s infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
 
 .love-footer {
   color: white !important;
@@ -154,4 +154,27 @@ body {
 .love-footer strong {
   color: white;
   font-size: 18px;
+}
+
+/* Seção do primeiro beijo */
+.kiss-area {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: rgba(255,200,220,0.05);
+  border: 2px dashed rgba(255,150,200,0.6);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0 0 15px rgba(255,0,150,0.4);
+}
+
+.kiss-counter {
+  margin: 15px auto;
+  padding: 12px;
+  max-width: 500px;
+  background: rgba(255,100,150,0.2);
+  border-radius: 12px;
+  font-size: 1.2em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
