@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>🌹 Amor eterno - Sophia & Eu ❤️</title>
-<link rel="stylesheet" href="sophia.css">
+  <link rel="stylesheet" href="sophia.css">
 </head>
 <body>
   <h1>🌹 Amor Eterno a meu amor, melhor mulher desse mundo minha princesa - Sophia ❤️</h1>
@@ -12,9 +12,9 @@
 
   <div class="love-text">
     Minha princesa Sophia, minha ptchuquinha, minha futura esposa...  
-Amo demais compartilhar momentos com você: ver reels juntinhos, sonhar com a nossa casa linda 🏡 e imaginar nossa princesinha pequena.  
-Cada segundo ao seu lado é o maior presente que já recebi.  
-Quero passar minha vida inteira com você, porque você é especial, linda e o amor da minha vida. ❤️  
+    Amo demais compartilhar momentos com você: ver reels juntinhos, sonhar com a nossa casa linda 🏡 e imaginar nossa princesinha pequena.  
+    Cada segundo ao seu lado é o maior presente que já recebi.  
+    Quero passar minha vida inteira com você, porque você é especial, linda e o amor da minha vida. ❤️  
   </div>
 
   <section>
@@ -26,8 +26,8 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
   <section>
     <h2>Minha Princesa linda</h2>
     <div class="gallery">
-      <img src="./Sophia.jpg" alt="Foto 4">
-      <img src="./Linda.jpg" alt="Foto 4">
+      <img src="./Sophia.jpg" alt="Foto Sophia">
+      <img src="./Linda.jpg" alt="Foto Linda">
     </div>
     <p style="margin-top:10px; color:#ff99aa;">(Troque por nossas fotos mais lindas 🌹)</p>
   </section>
@@ -42,7 +42,15 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
     <div class="play-area" id="roses"></div>
   </section>
 
-<footer class="love-footer">
+  <!-- Seção do primeiro beijo -->
+  <section>
+    <h2>Nosso Primeiro Beijo lindinha 😍</h2>
+    <div class="kiss-counter" id="kissContador"></div>
+    <p>Foi em <b>04/06/2025</b>, um dos momentos mais lindos da nossa vida. 🌹😭</p>
+   
+  </section>
+
+  <footer class="love-footer">
     <p>
       Meus futuros lindos filhos, que tomara que puxem a princesa da mãe de vocês.  
       Amo vocês, e sua mãe é o amor da minha vida: minha linda, perfeita.  
@@ -53,9 +61,10 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
       <br><br>
       <strong>Sophia, amo você ❤️</strong>
     </p>
-</footer>
+  </footer>
 
   <script>
+    // Contador de relacionamento
     function atualizarContador() {
       const inicio = new Date("2025-04-17T00:00:00");
       const agora = new Date();
@@ -79,6 +88,24 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
     setInterval(atualizarContador, 1000);
     atualizarContador();
 
+    // Contador do primeiro beijo
+    function atualizarKissContador() {
+      const inicioBeijo = new Date("2025-06-04T00:00:00");
+      const agora = new Date();
+      let diff = agora - inicioBeijo;
+
+      const dias = Math.floor(diff / (1000*60*60*24));
+      const horas = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutos = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const segundos = Math.floor((diff % (1000*60)) / 1000);
+
+      document.getElementById("kissContador").innerHTML =
+        `Nosso primeiro beijo foi há: <br><b>${dias} dias, ${horas}h ${minutos}m ${segundos}s </b>`;
+    }
+    setInterval(atualizarKissContador, 1000);
+    atualizarKissContador();
+
+    // Corações
     const heartsArea = document.getElementById("hearts");
     heartsArea.addEventListener("click", (e) => {
       const heart = document.createElement("div");
@@ -90,6 +117,7 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
       setTimeout(()=>heart.remove(), 3000);
     });
 
+    // Rosas
     const rosesArea = document.getElementById("roses");
     rosesArea.addEventListener("click", (e) => {
       const rose = document.createElement("div");
@@ -101,6 +129,7 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
       setTimeout(()=>rose.remove(), 3000);
     });
 
+    // Mensagens de amor
     const mensagens = [
       "Você é a razão do meu sorriso linda❤️",
       "Minha princesa, minha vida Je T'aime 🌹",
@@ -115,7 +144,7 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
       "Ver reels com você é minha terapia favorita esse olhar seu de criançinha  🎬💕",
       "Comer chocolate Suflair com você é perfeito 🍫❤️",
       "Nossa casa linda vai ser cheia de amor 🏡💞",
-      "Nossa princesinha pequena será a coisa mais fofa 👶🌸",
+      "Nossa princesinha pequena será a coisa mais fofa ",
       "Com você, tudo faz sentido ✨",
       "Te quero pra sempre comigo 💍💕"
     ];
@@ -124,6 +153,7 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
       document.getElementById("mensagem").innerText = msg;
     }
 
+    // Efeito de brilhos
     function criarSparkle() {
       const sparkle = document.createElement("div");
       sparkle.className = "sparkle";
@@ -134,6 +164,18 @@ Quero passar minha vida inteira com você, porque você é especial, linda e o a
       setTimeout(() => sparkle.remove(), 5000);
     }
     setInterval(criarSparkle, 600);
+
+    // Animação do primeiro beijo
+    const kissArea = document.getElementById("kissArea");
+    kissArea.addEventListener("click", (e) => {
+      const kiss = document.createElement("div");
+      kiss.className = "kiss-heart";
+      kiss.innerText = "💖";
+      kiss.style.left = e.offsetX + "px";
+      kiss.style.top = e.offsetY + "px";
+      kissArea.appendChild(kiss);
+      setTimeout(()=>kiss.remove(), 3000);
+    });
   </script>
 </body>
 </html>
