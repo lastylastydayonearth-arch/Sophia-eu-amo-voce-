@@ -65,29 +65,47 @@
 
   <script>
     // Contador de relacionamento
-    function atualizarContador() {
-      const inicio = new Date("2025-04-17T00:00:00");
-      const agora = new Date();
-      let diff = agora - inicio;
+    
+function atualizarContador() {
+  const inicio = new Date(2025, 3, 17, 0, 0, 0, 0); // 17/04/2025
+  const agora = new Date();
 
-      const anos = Math.floor(diff / (1000*60*60*24*365));
-      diff -= anos * (1000*60*60*24*365);
-      const meses = Math.floor(diff / (1000*60*60*24*30));
-      diff -= meses * (1000*60*60*24*30);
-      const dias = Math.floor(diff / (1000*60*60*24));
-      diff -= dias * (1000*60*60*24);
-      const horas = Math.floor(diff / (1000*60*60));
-      diff -= horas * (1000*60*60);
-      const minutos = Math.floor(diff / (1000*60));
-      diff -= minutos * (1000*60);
-      const segundos = Math.floor(diff / 1000);
+  let anos = agora.getFullYear() - inicio.getFullYear();
+  let meses = agora.getMonth() - inicio.getMonth();
+  let dias = agora.getDate() - inicio.getDate();
 
-      document.getElementById("contador").innerHTML = 
-        `Estamos juntos há: <br><b>${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s 💖</b>`;
-    }
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
+  if (dias < 0) {
+    const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+    dias += ultimoMes;
+    meses--;
+  }
 
+  if (meses < 0) {
+    meses += 12;
+    anos--;
+  }
+
+  // Data base ajustada (anos + meses + dias já contados)
+  const base = new Date(
+    inicio.getFullYear() + anos,
+    inicio.getMonth() + meses,
+    inicio.getDate() + dias,
+    0, 0, 0, 0
+  );
+
+  const resto = agora - base;
+
+  const segundos = Math.floor(resto / 1000);
+  const milissegundos = resto % 1000;
+
+  document.getElementById("contador").innerHTML =
+    `Estamos juntos há:<br>
+     <b>${anos} anos, ${meses} meses, ${dias} dias, ${segundos}s e ${milissegundos}ms 💖</b>`;
+}
+
+// Atualiza milissegundos em tempo real
+setInterval(atualizarContador, 10);
+atualizarContador()
     // Contador do primeiro beijo
     function atualizarKissContador() {
       const inicioBeijo = new Date("2025-06-04T00:00:00");
