@@ -65,6 +65,7 @@
 
   <script>
     // Contador de relacionamento
+
 function atualizarContador() {
   const inicio = new Date(2025, 3, 17, 0, 0, 0, 0); // 17/04/2025
   const agora = new Date();
@@ -84,7 +85,7 @@ function atualizarContador() {
     anos--;
   }
 
-  // Data base já ajustada
+  // Data base ajustada (anos, meses e dias já contabilizados)
   const base = new Date(
     inicio.getFullYear() + anos,
     inicio.getMonth() + meses,
@@ -94,6 +95,9 @@ function atualizarContador() {
 
   let resto = agora - base;
 
+  const horas = Math.floor(resto / (1000 * 60 * 60));
+  resto -= horas * (1000 * 60 * 60);
+
   const minutos = Math.floor(resto / (1000 * 60));
   resto -= minutos * (1000 * 60);
 
@@ -102,10 +106,10 @@ function atualizarContador() {
 
   document.getElementById("contador").innerHTML =
     `Estamos juntos há:<br>
-     <b>${anos} anos, ${meses} meses, ${dias} dias, ${minutos}m ${segundos}s ${milissegundos}ms 💖</b>`;
+     <b>${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s ${milissegundos}ms 💖</b>`;
 }
 
-// Atualização suave
+// Atualiza em tempo real
 setInterval(atualizarContador, 10);
 atualizarContador();
 
